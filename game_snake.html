@@ -151,7 +151,7 @@
   //创建分数变量
   let score = 0;
   let level = 1;
-  let record = 0;
+  var record = 0;
   //获取score和level的span对象
   let levelSpan = document.querySelector('#level span');
   let scoreSpan = document.querySelector('#score span');
@@ -253,7 +253,7 @@
     //检测蛇头和食物的位置是不是一样
     if (left === food.offsetLeft && top === food.offsetTop) {
       //生成食物
-      //makeFood();
+      makeFood();
       //分数加1
       score += 1;
       //修改控制台分数
@@ -281,6 +281,7 @@
     //最高记录更改函数
     function recordSet(){
       if(score > record){
+        record = score;
         recordSpan.innerHTML = score;
       }
     }
@@ -319,6 +320,7 @@
       makeFood();
       score += 1;
     }
+
 
 
 </script>
